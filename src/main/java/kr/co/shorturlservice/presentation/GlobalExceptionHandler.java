@@ -17,6 +17,6 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(LackOfShortenUrlKeyException.class)
     public ResponseEntity<String> lackOfShortenUrlException(LackOfShortenUrlKeyException e) {
-        return new ResponseEntity<>("중복된 단축 URL 값입니다.");
+        return new ResponseEntity<>("단축 URL 자원이 부족합니다.", HttpStatus.INTERNAL_SERVER_ERROR);
     }
 }
