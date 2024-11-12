@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.045s</div>
+<div class="counter">0.061s</div>
 <p>duration</p>
 </div>
 </td>
@@ -76,13 +76,15 @@
 <thead>
 <tr>
 <th>Test</th>
+<th>Method name</th>
 <th>Duration</th>
 <th>Result</th>
 </tr>
 </thead>
 <tr>
-<td class="success">redirectShortenUrl_Success()</td>
-<td class="success">0.045s</td>
+<td class="success">없는 단축 URL인 경우에는 에러를 반환한다.</td>
+<td class="success">redirectShortenUrl_Fail()</td>
+<td class="success">0.061s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -90,8 +92,8 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>19:46:07.992 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [kr.co.shorturlservice.presentation.ShortenUrlRestControllerTest]: ShortenUrlRestControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-19:46:08.049 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration kr.co.shorturlservice.ShorturlserviceApplication for test class kr.co.shorturlservice.presentation.ShortenUrlRestControllerTest
+<pre>20:22:15.551 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [kr.co.shorturlservice.presentation.ShortenUrlRestControllerTest]: ShortenUrlRestControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+20:22:15.622 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration kr.co.shorturlservice.ShorturlserviceApplication for test class kr.co.shorturlservice.presentation.ShortenUrlRestControllerTest
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -102,12 +104,12 @@
 
  :: Spring Boot ::                (v3.3.5)
 
-2024-11-12T19:46:08.190+09:00  INFO 58763 --- [shorturlservice] [    Test worker] k.c.s.p.ShortenUrlRestControllerTest     : Starting ShortenUrlRestControllerTest using Java 21.0.3 with PID 58763 (started by ihyeon-a in /Users/ihyeon-a/Desktop/side/short-url-service)
-2024-11-12T19:46:08.191+09:00  INFO 58763 --- [shorturlservice] [    Test worker] k.c.s.p.ShortenUrlRestControllerTest     : No active profile set, falling back to 1 default profile: &quot;default&quot;
-2024-11-12T19:46:09.029+09:00  INFO 58763 --- [shorturlservice] [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2024-11-12T19:46:09.029+09:00  INFO 58763 --- [shorturlservice] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2024-11-12T19:46:09.030+09:00  INFO 58763 --- [shorturlservice] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
-2024-11-12T19:46:09.044+09:00  INFO 58763 --- [shorturlservice] [    Test worker] k.c.s.p.ShortenUrlRestControllerTest     : Started ShortenUrlRestControllerTest in 0.969 seconds (process running for 1.465)
+2024-11-12T20:22:16.147+09:00  INFO 59357 --- [shorturlservice] [    Test worker] k.c.s.p.ShortenUrlRestControllerTest     : Starting ShortenUrlRestControllerTest using Java 21.0.3 with PID 59357 (started by ihyeon-a in /Users/ihyeon-a/Desktop/side/short-url-service)
+2024-11-12T20:22:16.151+09:00  INFO 59357 --- [shorturlservice] [    Test worker] k.c.s.p.ShortenUrlRestControllerTest     : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2024-11-12T20:22:17.542+09:00  INFO 59357 --- [shorturlservice] [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-11-12T20:22:17.543+09:00  INFO 59357 --- [shorturlservice] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-11-12T20:22:17.544+09:00  INFO 59357 --- [shorturlservice] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2024-11-12T20:22:17.559+09:00  INFO 59357 --- [shorturlservice] [    Test worker] k.c.s.p.ShortenUrlRestControllerTest     : Started ShortenUrlRestControllerTest in 1.893 seconds (process running for 2.36)
 
 MockHttpServletRequest:
       HTTP Method = GET
@@ -126,7 +128,7 @@ Async:
      Async result = null
 
 Resolved Exception:
-             Type = null
+             Type = kr.co.shorturlservice.domain.NotFoundShortenUrlException
 
 ModelAndView:
         View name = null
@@ -137,13 +139,13 @@ FlashMap:
        Attributes = null
 
 MockHttpServletResponse:
-           Status = 301
+           Status = 404
     Error message = null
-          Headers = [Location:&quot;https://www.naver.com&quot;]
-     Content type = null
-             Body = 
+          Headers = [Content-Type:&quot;text/plain;charset=UTF-8&quot;, Content-Length:&quot;37&quot;]
+     Content type = text/plain;charset=UTF-8
+             Body = 단축 url을 찾지 못했습니다.
     Forwarded URL = null
-   Redirected URL = https://www.naver.com
+   Redirected URL = null
           Cookies = []
 </pre>
 </span>
@@ -166,7 +168,7 @@ WARNING: Dynamic loading of agents will be disallowed by default in a future rel
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 8.10.2</a> at 2024. 11. 12. 오후 7:46:09</p>
+<a href="http://www.gradle.org">Gradle 8.10.2</a> at 2024. 11. 12. 오후 8:22:17</p>
 </div>
 </div>
 </body>
