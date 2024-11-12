@@ -37,4 +37,12 @@ public class SimpleShortenUrlService {
         ShortenUrl shortenUrl = shortenUrlRepository.findShortenUrlByShortenUrlKey(shortenUrlKey);
         return new ShortenUrlInformationDto(shortenUrl.getOriginalUrl(), shortenUrl.getShortenUrlKey(), shortenUrl.getRedirectCount());
     }
+
+    public String getOriginalUrlByShortenUrlKey(String shortenUrlKey) {
+        ShortenUrl shortenUrl = shortenUrlRepository.findShortenUrlByShortenUrlKey(shortenUrlKey);
+        shortenUrl.increaseRedirectUrl();
+        shortenUrlRepository.saveShortenUrl(shortenUrl);
+
+        return shortenUrl.getOriginalUrl();
+    }
 }
