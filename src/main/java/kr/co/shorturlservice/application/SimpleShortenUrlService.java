@@ -1,5 +1,6 @@
 package kr.co.shorturlservice.application;
 
+import kr.co.shorturlservice.domain.NotFoundShortenUrlException;
 import kr.co.shorturlservice.domain.ShortenUrl;
 import kr.co.shorturlservice.domain.ShortenUrlRepository;
 import kr.co.shorturlservice.presentation.ShortenUrlCreateRequestDto;
@@ -35,11 +36,20 @@ public class SimpleShortenUrlService {
 
     public ShortenUrlInformationDto getShortenUrlInformationByShortenUrlKey(String shortenUrlKey) {
         ShortenUrl shortenUrl = shortenUrlRepository.findShortenUrlByShortenUrlKey(shortenUrlKey);
+
+        if(shortenUrl == null) {
+            throw new NotFoundShortenUrlException();
+        }
         return new ShortenUrlInformationDto(shortenUrl.getOriginalUrl(), shortenUrl.getShortenUrlKey(), shortenUrl.getRedirectCount());
     }
 
     public String getOriginalUrlByShortenUrlKey(String shortenUrlKey) {
         ShortenUrl shortenUrl = shortenUrlRepository.findShortenUrlByShortenUrlKey(shortenUrlKey);
+
+        if(shortenUrl == null) {
+            throw new NotFoundShortenUrlException();
+        }
+
         shortenUrl.increaseRedirectUrl();
         shortenUrlRepository.saveShortenUrl(shortenUrl);
 
