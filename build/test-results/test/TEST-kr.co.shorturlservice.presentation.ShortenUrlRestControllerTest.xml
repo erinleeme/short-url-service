@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="kr.co.shorturlservice.presentation.ShortenUrlRestControllerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-11-12T10:46:09" hostname="ihyeon-aui-MacBookPro.local" time="0.045">
+  <properties/>
+  <testcase name="redirectShortenUrl_Success()" classname="kr.co.shorturlservice.presentation.ShortenUrlRestControllerTest" time="0.045"/>
+  <system-out><![CDATA[19:46:07.992 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [kr.co.shorturlservice.presentation.ShortenUrlRestControllerTest]: ShortenUrlRestControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+19:46:08.049 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration kr.co.shorturlservice.ShorturlserviceApplication for test class kr.co.shorturlservice.presentation.ShortenUrlRestControllerTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.5)
+
+2024-11-12T19:46:08.190+09:00  INFO 58763 --- [shorturlservice] [    Test worker] k.c.s.p.ShortenUrlRestControllerTest     : Starting ShortenUrlRestControllerTest using Java 21.0.3 with PID 58763 (started by ihyeon-a in /Users/ihyeon-a/Desktop/side/short-url-service)
+2024-11-12T19:46:08.191+09:00  INFO 58763 --- [shorturlservice] [    Test worker] k.c.s.p.ShortenUrlRestControllerTest     : No active profile set, falling back to 1 default profile: "default"
+2024-11-12T19:46:09.029+09:00  INFO 58763 --- [shorturlservice] [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-11-12T19:46:09.029+09:00  INFO 58763 --- [shorturlservice] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-11-12T19:46:09.030+09:00  INFO 58763 --- [shorturlservice] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2024-11-12T19:46:09.044+09:00  INFO 58763 --- [shorturlservice] [    Test worker] k.c.s.p.ShortenUrlRestControllerTest     : Started ShortenUrlRestControllerTest in 0.969 seconds (process running for 1.465)
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /any-key
+       Parameters = {}
+          Headers = []
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = kr.co.shorturlservice.presentation.ShortenUrlRestController
+           Method = kr.co.shorturlservice.presentation.ShortenUrlRestController#redirectShortenUrl(String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 301
+    Error message = null
+          Headers = [Location:"https://www.naver.com"]
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = https://www.naver.com
+          Cookies = []
+]]></system-out>
+  <system-err><![CDATA[WARNING: A Java agent has been loaded dynamically (/Users/ihyeon-a/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy-agent/1.14.19/154da3a65b4f4a909d3e5bdec55d1b2b4cbb6ce1/byte-buddy-agent-1.14.19.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+]]></system-err>
+</testsuite>
