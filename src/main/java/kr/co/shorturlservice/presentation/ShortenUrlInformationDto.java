@@ -5,6 +5,12 @@ public class ShortenUrlInformationDto {
     private String shortenUrlKey;
     private Long redirectCount;
 
+    public ShortenUrlInformationDto(String originalUrl, String shortenUrlKey, Long redirectCount) {
+        this.originalUrl = originalUrl;
+        this.shortenUrlKey = shortenUrlKey;
+        this.redirectCount = redirectCount;
+    }
+
     public String getOriginalUrl() {
         return originalUrl;
     }

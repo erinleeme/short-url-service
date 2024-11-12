@@ -4,6 +4,7 @@ import kr.co.shorturlservice.domain.ShortenUrl;
 import kr.co.shorturlservice.domain.ShortenUrlRepository;
 import kr.co.shorturlservice.presentation.ShortenUrlCreateRequestDto;
 import kr.co.shorturlservice.presentation.ShortenUrlCreateResponseDto;
+import kr.co.shorturlservice.presentation.ShortenUrlInformationDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -30,5 +31,10 @@ public class SimpleShortenUrlService {
 
         /*ShortenUrl을 ShortenUrlCreateResponseDto로 변환하여 반환*/
         return new ShortenUrlCreateResponseDto(shortenUrl);
+    }
+
+    public ShortenUrlInformationDto getShortenUrlInformationByShortenUrlKey(String shortenUrlKey) {
+        ShortenUrl shortenUrl = shortenUrlRepository.findShortenUrlByShortenUrlKey(shortenUrlKey);
+        return new ShortenUrlInformationDto(shortenUrl.getOriginalUrl(), shortenUrl.getShortenUrlKey(), shortenUrl.getRedirectCount());
     }
 }
